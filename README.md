@@ -1,12 +1,9 @@
-# desktop
-
-This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 3.5.0.
+# Assignment & MEAN Structure
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Git](https://git-scm.com/)
 - [Node.js and npm](nodejs.org) Node ^4.2.3, npm ^2.14.7
 - [Bower](bower.io) (`npm install --global bower`)
 - [Grunt](http://gruntjs.com/) (`npm install --global grunt-cli`)
@@ -26,6 +23,3 @@ This project was generated with the [Angular Full-Stack Generator](https://githu
 
 Run `grunt build` for building and `grunt serve` for preview.
 
-## Testing
-
-Running `npm test` will run the unit tests with karma.
