@@ -11,6 +11,9 @@ export default function(app) {
   // Insert routes below
   app.use('/api/things', require('./api/thing'));
   app.use('/api/users', require('./api/user'));
+  
+  // Credit Cards API
+  app.use('/api/credit_cards', require('./api/credit_card'));
 
   app.use('/auth', require('./auth').default);
 
