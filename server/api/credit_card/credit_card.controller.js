@@ -67,6 +67,7 @@ export function index(req, res) {
 }
 
 // This action perform sync operation.
+// 
 export function sync_credit_cards(req, res) {
   var request = require('request');
   var sync_api_uri = 'https://www.souqalmal.com/api/product?apiCountry=ae&apiLanguage=en&categoryId=543857a388de100000ae90bb&categoryName=credit-cards&filter=%7B%22category%22:%22credit-cards%22,%22userSalary%22:%220%22%7D&limit=25&order=false&pageNum=1&skip=0'
@@ -74,6 +75,14 @@ export function sync_credit_cards(req, res) {
     if (!error && response.statusCode == 200) {
       // API DATA available here....
       console.log("API Data received......")
+      var result = JSON.parse(body);
+      // Testing cc descriptions for one object
+      // will be removed after conditional loop
+      console.log(result['data']['data'][0]['descriptions'])
+      // Store credit card info to Model
+     return CreditCard.create({ descriptions: result['data']['data'][0]['descriptions'] })
+    .then(respondWithResult(res, 201))
+    .catch(handleError(res));
     }
   })
 }

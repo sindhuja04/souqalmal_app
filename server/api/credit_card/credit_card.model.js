@@ -3,9 +3,32 @@
 import mongoose from 'mongoose';
 
 var CreditCardSchema = new mongoose.Schema({
-  name: String,
-  info: String,
-  active: Boolean
+	title: String,
+
+	descriptions: {                
+		name: String,
+		eligibility: Array,
+		annualFee: String,
+		additionalInfo: Array,
+		islamicName: String,
+		creditCard: 
+		{ rewardsDescription: String,
+			interestRate: String,
+			minSalary: String,
+			cashBack: String,
+			miles: String
+		},
+		reward: Boolean,
+		benefits: String,
+		typeSpecificData: 
+		{ rewardsDescription: String,
+			interestRate: String,
+			minSalary: String,
+			cashBack: String,
+			miles: String
+		},
+	}
+
 });
 
 export default mongoose.model('CreditCard', CreditCardSchema);
