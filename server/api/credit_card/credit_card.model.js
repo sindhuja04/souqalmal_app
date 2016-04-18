@@ -3,7 +3,7 @@
 import mongoose from 'mongoose';
 
 var CreditCardSchema = new mongoose.Schema({
-	title: String,
+	credit_card_uuid: String,
 
 	descriptions: {                
 		name: String,
