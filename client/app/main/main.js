@@ -1,10 +1,11 @@
 'use strict';
 
 angular.module('desktopApp')
-  .config(function($stateProvider) {
+  .config(function ($stateProvider) {
     $stateProvider
       .state('main', {
         url: '/',
-        template: '<main></main>'
+        templateUrl: 'app/main/main.html',
+        controller: 'MainCtrl'
       });
   });

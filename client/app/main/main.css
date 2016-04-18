@@ -25,3 +25,10 @@
 .navbar-text {
   margin-left: 15px;
 }
+
+
+.blogShort{ border-bottom:1px solid #ddd;}
+
+.card-size {
+  height: 120px;
+}

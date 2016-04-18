@@ -1,36 +1,9 @@
 'use strict';
 
-(function() {
-
-class MainController {
-
-  constructor($http) {
-    this.$http = $http;
-    this.awesomeThings = [];
-  }
-
-  $onInit() {
-    this.$http.get('/api/things').then(response => {
-      this.awesomeThings = response.data;
-    });
-  }
-
-  addThing() {
-    if (this.newThing) {
-      this.$http.post('/api/things', { name: this.newThing });
-      this.newThing = '';
-    }
-  }
-
-  deleteThing(thing) {
-    this.$http.delete('/api/things/' + thing._id);
-  }
-}
-
 angular.module('desktopApp')
-  .component('main', {
-    templateUrl: 'app/main/main.html',
-    controller: MainController
-  });
-
-})();
+.controller('MainCtrl', function ($scope, $http) {
+	$scope.awesomeThings = [];
+	$http.get('/api/credit_cards').success(function(credit_cards) {
+		$scope.credit_cards = credit_cards;
+	});
+});

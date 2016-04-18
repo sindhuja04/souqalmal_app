@@ -76,15 +76,14 @@ export function sync_credit_cards(req, res) {
       // API DATA available here....
       console.log("API Data received......")
       var result = JSON.parse(body);
-      // Testing cc descriptions for one object
-      // will be removed after conditional loop
-      console.log(result['data']['data'][0]['descriptions'])
       // Store credit card info to Model
       for (var i = 0; i < result['data']['data'].length; i++){
         // TODO add a conditional check for repeating data
         var credit_card_uuid = result['data']['data'][i]['_id']
         var descriptions = result['data']['data'][i]['descriptions']
-        CreditCard.create({ credit_card_uuid: credit_card_uuid, descriptions: descriptions })
+        var image_url = result['data']['data'][i]['imageUrl']
+        // Creates a CC record
+        CreditCard.create({ credit_card_uuid: credit_card_uuid, descriptions: descriptions, image_url: image_url})
 
       }
       res.send(200)
