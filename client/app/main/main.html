@@ -9,15 +9,14 @@
 						<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=120" ng-if="!credit_card.image_url" class="card-size pull-left img-responsive">
 						
 					</div>
-					<div class="col-lg-8">
+					<div class="col-lg-8 pull-up">
 						<h4><b>{{credit_card.descriptions.name}}</b></h4>
 						<div class="panel panel-default cc-desc">
 							<div class="panel-body">
-								<p>{{credit_card.descriptions.benefits | limitTo:textLength}}</p>
-								<button type="button" ng-click="changeLength()" class="btn btn-default btn-xs">Read More</button>
+								<p>{{credit_card.descriptions.benefits | limitTo:textLength}}....</p>
 							</div>
-
 						</div>
+						<a class="btn btn-primary pull-right" ui-sref="details({ cardID: credit_card._id})">Read More</a>
 					</div>
 				</div>
 			</div>

@@ -10,5 +10,6 @@ router.get('/', controller.index);
 // This API route is used for syncing the credit cards model.
 router.get('/sync', controller.sync_credit_cards);
 
+router.get('/:id', controller.show);
 
 module.exports = router;

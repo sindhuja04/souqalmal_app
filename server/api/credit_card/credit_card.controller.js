@@ -66,6 +66,14 @@ export function index(req, res) {
   .catch(handleError(res));
 }
 
+export function show(req, res) {
+  return CreditCard.findById(req.params.id).exec()
+    .then(handleEntityNotFound(res))
+    .then(respondWithResult(res))
+    .catch(handleError(res));
+}
+
+
 // This action perform sync operation.
 // 
 export function sync_credit_cards(req, res) {
