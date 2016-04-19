@@ -9,7 +9,8 @@ angular.module('desktopApp', [
   'ngSanitize',
   'ui.router',
   'ui.bootstrap',
-  'validation.match'
+  'validation.match',
+  'angularUtils.directives.dirPagination'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider

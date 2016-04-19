@@ -82,9 +82,10 @@ export function sync_credit_cards(req, res) {
         var credit_card_uuid = result['data']['data'][i]['_id']
         var descriptions = result['data']['data'][i]['descriptions']
         var image_url = result['data']['data'][i]['imageUrl']
+
         // Creates a CC record
         CreditCard.create({ credit_card_uuid: credit_card_uuid, descriptions: descriptions, image_url: image_url})
-
+       
       }
       res.send(200)
     }  
