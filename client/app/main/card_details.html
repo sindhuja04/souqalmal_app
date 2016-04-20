@@ -1,1 +1,72 @@
-{{card_detail}}
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+
+			<div class="row">
+				<div class="col-lg-4">
+					<img ng-src="{{card_detail.image_url}}" class="card-size pull-left img-responsive">
+				</div>
+
+				<div class="col-lg-8">
+					<h4><b>{{card_detail.descriptions.name}}</b></h4>
+					<div class="panel panel-default cc-desc">
+						<div class="panel-body">
+							<p>{{card_detail.descriptions.benefits}}</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-6">
+					<table class="table table-bordered table-striped">
+						<tbody>
+							<tr>
+								
+								<td><b>Balance Transfer</b></td> 
+								<td><b style="color:#5ba9d7">Yes</td> 
+							</tr>
+							<tr> 
+
+								<td><b>Cash Back</b></td>
+								<td><b style="color:#5ba9d7">{{cashBack}}</b></td>
+							</tr>
+						</tbody> 
+					</table>
+				</div>
+				<div class="col-lg-6">
+					<table class="table table-bordered table-striped">
+						
+						<tbody>
+							<tr>
+								<td><b>Min Salary</b></td>
+								<td><b style="color:#5ba9d7">AED 15000</b></td> 
+							</tr>
+						</tbody> 
+					</table>
+				</div>
+			</div>
+			<div class="row">
+				<h5><b>MAIN BENEFITS</b></h5>
+				<ul>
+					<li>{{card_detail.descriptions.creditCard.rewardsDescription}}</li>
+					<li>{{card_detail.descriptions.creditCard.interestRate}}</li>
+					<li>{{card_detail.descriptions.creditCard.minSalary}}</li>
+					<li>{{card_detail.descriptions.creditCard.cashBack}}</li>
+					<li>{{card_detail.descriptions.creditCard.miles}}</li>
+				</ul>
+			</div>
+			<div class="row">
+				<h5><b>OVERVIEW OF FEATURES</b></h5>
+				<ul>
+					<li>{{card_detail.descriptions.typeSpecificData.rewardsDescription}}</li>
+					<li>{{card_detail.descriptions.typeSpecificData.interestRate}}</li>
+					<li>{{card_detail.descriptions.typeSpecificData.minSalary}}</li>
+					<li>{{card_detail.descriptions.typeSpecificData.cashBack}}</li>
+					<li>{{card_detail.descriptions.typeSpecificData.miles}}</li>
+				</ul>
+			</div>
+			<!-- {{card_detail.descriptions}} -->
+		</div>
+	</div>
+</div>
+

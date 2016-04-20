@@ -13,8 +13,24 @@ angular.module('desktopApp')
 	if ($stateParams.cardID != undefined){
 		$http.get('/api/credit_cards/'+$stateParams.cardID).success(function(card_detail) {
 			$scope.card_detail = card_detail;
+			if ($scope.card_detail.descriptions.typeSpecificData.minSalary != undefined) {
+				$scope.minSalary = $scope.card_detail.descriptions.typeSpecificData.minSalary;
+			}
+			else {
+				$scope.minSalary = 'No';
+			}
+			if ($scope.card_detail.descriptions.typeSpecificData.cashBack != undefined) {
+				$scope.cashBack = 'Yes';
+			}
+			else {
+				$scope.cashBack = 'No';	
+			}
 			$state.go('details');
+
+
+
 		});
+
 	}
 	
 });
