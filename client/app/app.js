@@ -10,7 +10,8 @@ angular.module('desktopApp', [
   'ui.router',
   'ui.bootstrap',
   'validation.match',
-  'angularUtils.directives.dirPagination'
+  'angularUtils.directives.dirPagination',
+  'angular.filter'
 ])
   .config(function($urlRouterProvider, $locationProvider) {
     $urlRouterProvider
