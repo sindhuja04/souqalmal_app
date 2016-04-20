@@ -3,11 +3,12 @@
 		<div class="col-lg-12">
 
 			<div class="row">
-				<div class="col-lg-4">
+				<div class="col-lg-3">
 					<img ng-src="{{card_detail.image_url}}" class="card-size pull-left img-responsive">
+					<img src="https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=200&h=120" ng-if="!card_detail.image_url" class="card-size pull-left img-responsive">
 				</div>
 
-				<div class="col-lg-8">
+				<div class="col-lg-9">
 					<h4><b>{{card_detail.descriptions.name}}</b></h4>
 					<div class="panel panel-default cc-desc">
 						<div class="panel-body">
