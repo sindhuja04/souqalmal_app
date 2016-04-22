@@ -4,17 +4,25 @@ angular.module('desktopApp')
 .controller('MainCtrl', function ($scope, $http, $stateParams,$state, Auth) {
 
 	if (Auth.isLoggedIn()) {
+
 		console.log('The user is logged IN');
 		$scope.credit_cards = [];
+		$('.hideLoader').show();
 		$http.get('/api/credit_cards').success(function(credit_cards) {
 			$scope.credit_cards = credit_cards;
+			$('.hideLoader').hide();
 		});
+
 		$scope.textLength = 140;
 
+		// Sync API Call
 		$scope.reloadCc = function() {
 			$('.hideLoader').show();
 			$http.get('/api/credit_cards/sync').success(function(resp) {
-				$('.hideLoader').hide();
+				$http.get('/api/credit_cards').success(function(credit_cards) {
+					$('.hideLoader').hide();
+					$scope.credit_cards = credit_cards;
+				});
 			});
 		}
 
@@ -58,9 +66,6 @@ angular.module('desktopApp')
 					$scope.cashBack = 'No';	
 				}
 				$state.go('details');
-
-
-
 			});
 
 		}
