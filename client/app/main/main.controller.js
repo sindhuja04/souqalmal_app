@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('desktopApp')
-.controller('MainCtrl', function ($scope, $http, $stateParams,$state, $window, Auth) {
+.controller('MainCtrl', function ($scope, $http, $stateParams,$state, Auth) {
 
 	if (Auth.isLoggedIn()) {
 		console.log('The user is logged IN');
@@ -14,7 +14,7 @@ angular.module('desktopApp')
 		$scope.reloadCc = function() {
 			$('.hideLoader').show();
 			$http.get('/api/credit_cards/sync').success(function(resp) {
-				$window.location.reload();
+				$('.hideLoader').hide();
 			});
 		}
 
