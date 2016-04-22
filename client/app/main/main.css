@@ -1,3 +1,9 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*text-align: center; /* !!! */*/
+}
+
 .thing-form {
   margin: 20px 0;
 }
@@ -44,4 +50,27 @@
 
 .select-providers{
   padding-bottom: 10px;
+}
+
+#centeredDiv { 
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 999;
+  position: fixed;
+  /*height: 2em;*/
+  /*width: 2em;*/
+  overflow: show;
+  margin: auto;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.hideLoader{
+  display: none;
+}
+
+.reload {
+    margin-bottom: 5px;
 }

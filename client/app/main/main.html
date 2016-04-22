@@ -2,13 +2,20 @@
 
 <div class="container">
 	<div class="row">
-		<div class="col-lg-12">
+		<div class="col-lg-8">
 			<dir-pagination-controls max-size="5" direction-links="true" boundary-links="true" >
 		</dir-pagination-controls>
 	</div>
+	<div class="col-lg-4">
+		<button type="button" class="btn btn-success reload" ng-click="reloadCc()">Reload Credit Cards</button>
+	</div>
 </div>
-
+<div class="hideLoader">
+	<img src="/img/ajax-loader.gif" alt="Loading" title="Loading" id="centeredDiv" />
+</div>
 <div class="row">
+
+	
 	<div class="col-lg-8">
 		<!-- <div class="well" dir-paginate="credit_card in credit_cards | itemsPerPage: 5"> -->
 		<div class="well" dir-paginate="credit_card in filtered=(credit_cards | filter:filterByCategory) | itemsPerPage: 5">
@@ -44,12 +51,12 @@
 					<div ng-repeat="credit_card in getCreditCards()" class="select-providers">
 						<label>
 							<input type="checkbox" ng-model="filter[credit_card]">{{credit_card}}
-							</input>
-						</label>
-					</div>
+						</input>
+					</label>
 				</div>
 			</div>
 		</div>
+	</div>
 </div>
 
 </div>

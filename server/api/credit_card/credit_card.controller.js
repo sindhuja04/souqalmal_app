@@ -84,6 +84,9 @@ export function sync_credit_cards(req, res) {
       // API DATA available here....
       console.log("API Data received......")
       var result = JSON.parse(body);
+      // Delete all records for resync
+      CreditCard.remove().exec();
+      
       // Store credit card info to Model
       for (var i = 0; i < result['data']['data'].length; i++){
         // TODO add a conditional check for repeating data
