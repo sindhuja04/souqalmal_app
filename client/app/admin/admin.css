@@ -17,3 +17,7 @@
 	align-items: center;
 	text-decoration: none;
 }
+
+.label-primary {
+	font-size: 14px;
+}
